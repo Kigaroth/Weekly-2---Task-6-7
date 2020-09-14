@@ -14,47 +14,64 @@ Update task 7 to accept both capital and lower case letters.Both 'A' and ‘a’, et
 #include <string>
 
 using namespace std;
-std::string grade;
+char grade;
+bool proper_grade;
 
 int main()
 {
-    std::cout << "\t\t\t\t Menu\n\n";
+    do { 
+        proper_grade = true;
 
-    std::cout << "Please enter the grade you want in Programming 1:  ";
-    std::cin >> grade;
-    std::cout << std::endl;
+        std::cout << std::endl;
+            
+        std::cout << "Please enter the grade you want in Programming 1:  ";
+        std::cin >> grade;
+        std::cout << std::endl;
 
+    //using ascii value of letters for the cases//
+ 
+    switch ((int)grade) {
+        
+        //Grade A//
+        case 65:
+        case 97:
+           std::cout << "Outstanding." << std::endl;
+           break;
 
-        switch ()
+        //Grade B//
+        case 66:
+        case 98:
+            std::cout << "Very good." << std::endl;
+            break;
 
+        //Grade C//
+        case 67:
+        case 99:
+            std::cout << "Good." << std::endl;
+            break;
+
+        //Grade D//
+        case 68:
+        case 100:
+            std::cout << "Some flaws." << std::endl;
+            break;
+
+         //Grade E//
+        case 69:
+        case 101:
+            std::cout << "Not very good..." << std::endl;
+            break;
+   
+        //Grade F//
+        case 70:
+        case 102:
+            std::cout << "Fail." << std::endl;
+            break;
+
+        default:
+            system("CLS");
+            std::cout << "That is not a grade! Try again!" << std::endl;
+            proper_grade = false;
+        }
+    } while (proper_grade == false);
 }
-
-
-    //if (grade == "A"||"a") {
-    //    std::cout << "Outstanding.";
-    //}
-
-    //else if (grade == "B") {
-    //    std::cout << "Very good.";
-    //}
-
-    //else if (grade == "C") {
-    //    std::cout << "Good.";
-    //}
-
-    //else if (grade == "D") {
-    //    std::cout << "Some flaws.";
-    //}
-
-    //else if (grade == "E") {
-    //    std::cout << "Not very good...";
-    //}
-
-    //else if (grade == "F") {
-    //    std::cout << "Fail.";
-    //}
-
-    //else if (grade != "A" || "B" || "C" || "D" || "E" || "F") {
-    //    std::cout << "That is not a grade!";
-    //}
-
